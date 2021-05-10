@@ -4,13 +4,13 @@ const nodemailer = require("nodemailer");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: "todosappfortest@gmail.com",
-        pass: "todosappfortest1234",
+        user: process.env.EMAIL_USER,
+        pass: process.env.PASS,
       },
     });
     const option = {
-      from: "todosappfortest@gmail.com",
-      to: "agrir.dev@gmail.com",
+      from: process.env.EMAIL_USER,
+      to: process.env.SEND_TO,
       subject: "your todo is completed",
       text
     };
